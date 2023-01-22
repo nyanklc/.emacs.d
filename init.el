@@ -55,17 +55,19 @@
  ;; If there is more than one, they won't work right.
  )
 
+(setq noyan_manual_plugins '(rainbow-delimiters focus))
+(message-box "you should manually install these packages : %s" noyan_manual_plugins)
+
 ;; rainbow parantheses
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+;; M-x focus-change-thing changes focus space
+(require 'focus)
 
 ;; disable gui thingies
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
-
-;; M-x focus-change-thing changes focus space
-(require 'focus)
 
 ;; indentation
 (global-aggressive-indent-mode 1)
