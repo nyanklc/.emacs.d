@@ -55,22 +55,11 @@
  ;; If there is more than one, they won't work right.
  )
 
-(setq noyan_manual_plugins '(rainbow-delimiters focus))
-(message-box "you should manually install these packages : %s" noyan_manual_plugins)
-
-;; rainbow parantheses
-(require 'rainbow-delimiters)
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
-;; M-x focus-change-thing changes focus space
-(require 'focus)
-
 ;; disable gui thingies
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
-;; indentation
-(global-aggressive-indent-mode 1)
 
 ;; font
 (set-frame-font "Ubuntu Mono" nil t)
@@ -98,14 +87,11 @@
  vc-follow-symlinks t                             ; Always follow the symlinks
  view-read-only t)                                ; Always open read-only buffers in view-mode
 
-;; set color of line highlighting
-(set-face-background 'hl-line "#3e4446")
 ;; keep syntax highlighting in the current line
 (set-face-foreground 'highlight nil)
 
 (column-number-mode 1)                            ; Show the column number
 (fset 'yes-or-no-p 'y-or-n-p)                     ; Replace yes/no prompts with y/n
-(global-hl-line-mode)                             ; Hightlight current line
 (set-default-coding-systems 'utf-8)               ; Default to utf-8 encoding
 (show-paren-mode 1)                               ; Show the parent
 
