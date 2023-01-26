@@ -152,7 +152,7 @@
 ;; tab completion mini buffer
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
-(ido-mode 1)
+(ido-mode t)
 
 (use-package smex)
 (global-set-key (kbd "M-x") 'smex)
@@ -179,7 +179,8 @@
          (lsp-mode . lsp-enable-which-key-integration))
   :commands lsp)
 
-
+;; git diffs on line
+(use-package magit)
 
 
 
@@ -197,7 +198,7 @@
  '(custom-safe-themes
    '("2ff9ac386eac4dffd77a33e93b0c8236bb376c5a5df62e36d4bfa821d56e4e20" default))
  '(package-selected-packages
-   '(company electric-pair doom-themes neotree doom-modeline sudo-edit emojify dashboard all-the-icons gcmh lsp-mode aggressive-indent focus rainbow-delimiters gruvbox-theme auto-package-update use-package yasnippet-snippets yaml-mode windresize which-key wgrep web-mode visual-regexp untitled-new-buffer unfill undo-fu smooth-scroll smex rotate poly-org poly-noweb poly-markdown poetry pdf-tools outline-magic multiple-cursors multi-term minions ivy-hydra htmlize howdoi flycheck flx-ido exec-path-from-shell eval-in-repl epc dumb-jump diff-hl counsel conda company-math company-auctex command-log-mode better-defaults anzu adaptive-wrap))
+   '(magit company electric-pair doom-themes neotree doom-modeline sudo-edit emojify dashboard all-the-icons gcmh lsp-mode aggressive-indent focus rainbow-delimiters gruvbox-theme auto-package-update use-package yasnippet-snippets yaml-mode windresize which-key wgrep web-mode visual-regexp untitled-new-buffer unfill undo-fu smooth-scroll smex rotate poly-org poly-noweb poly-markdown poetry pdf-tools outline-magic multiple-cursors multi-term minions ivy-hydra htmlize howdoi flycheck flx-ido exec-path-from-shell eval-in-repl epc dumb-jump diff-hl counsel conda company-math company-auctex command-log-mode better-defaults anzu adaptive-wrap))
  '(warning-suppress-types '((comp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
