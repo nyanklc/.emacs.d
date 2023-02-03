@@ -163,7 +163,15 @@
          (lsp-mode . lsp-enable-which-key-integration))
   :commands lsp)
 (require 'lsp-mode)
-(add-hook 'XXX-mode-hook #'lsp)
+(use-package lsp-ui)
+(use-package flycheck-google-cpplint)
+(use-package company-c-headers)
+(use-package company-ctags)
+(use-package lsp-treemacs)
+(use-package helm-lsp)
+(use-package dap-mode)
+
+(add-hook 'XXX-mode-hook #'lsp) ;; this piece of shit doesn't work idk why
 
 ;; git diffs on line
 (use-package diff-hl)
