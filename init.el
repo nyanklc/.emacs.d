@@ -30,13 +30,6 @@
                      gcs-done)))
 
 
-;; icons
-(use-package all-the-icons
-  :config
-  (dashboard-setup-startup-hook)
-  (dashboard-modify-heading-icons '((recents . "file-text")
-			                              (bookmarks . "book"))))
-
 ;; select text and type to replace
 (delete-selection-mode t)
 
@@ -109,16 +102,12 @@
 (use-package doom-themes)
 (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
       doom-themes-enable-italic t) ; if nil, italics is universally disabled
-(load-theme 'doom-material-dark t)
+(load-theme 'doom-monokai-pro)
 
 ;; indent
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq indent-line-function 'insert-tab)
-
-;; indent highligh
-(use-package 'highlight-indent-guides)
-(add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
 
 ;; c++ indent?
 (defun my-c++-mode-hook ()
@@ -185,16 +174,16 @@
 (use-package company-ctags)
 (use-package lsp-treemacs)
 (use-package helm-lsp)
-(use-package dap-mode)
+;; (use-package dap-mode)
 
 (add-hook 'XXX-mode-hook #'lsp) ;; this piece of shit doesn't work idk why
 
 ;; git diffs on line
 (use-package diff-hl)
 (global-diff-hl-mode)
-(use-package magit)
 
-
+;; no backup files
+(setq make-backup-files nil)
 
 
 
