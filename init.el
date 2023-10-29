@@ -63,11 +63,11 @@
 ;; tab completion
 (setq completion-cycle-threshold t)
 
-;; tab completion mini buffer
-(require 'ido)
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
-(ido-mode t)
+;; using helm now...
+;; (require 'ido)
+;; (setq ido-enable-flex-matching t)
+;; (setq ido-everywhere t)
+;; (ido-mode t)
 
 (use-package flycheck :ensure t)
 (global-flycheck-mode)
