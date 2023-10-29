@@ -1,3 +1,6 @@
+;; turn off compilation warnings
+(setq byte-compile-warnings '(not WARNING))
+
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
@@ -77,13 +80,13 @@
 (global-company-mode)
 (global-hl-line-mode)
 
-;;(use-package helm :ensure t)
+(helm-mode 1)
+(global-set-key (kbd "M-x") #'helm-M-x)
+(global-set-key (kbd "C-x C-f") #'helm-find-files)
 
 (use-package lsp-mode
   :ensure t
   :init
-  ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
-  (setq lsp-keymap-prefix "C-c l")
   :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
          ((c++-mode) . lsp)
          ;; if you want which-key integration
@@ -113,11 +116,11 @@
 ;; buffer list
 (global-set-key (kbd "C-x C-b") 'buffer-menu)
 
+;; lsp keybind
+(setq lsp-keymap-prefix "C-c l")
+
 ;; no backup files
 (setq make-backup-files nil)
-
-(helm-mode 1)
-(global-set-key (kbd "M-x") #'helm-M-x)
 
 ;; perhaps I should remove these, add them to the config instead
 ;; TODO: cleanup
