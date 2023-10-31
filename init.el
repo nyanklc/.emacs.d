@@ -126,6 +126,9 @@
 ;; no backup files
 (setq make-backup-files nil)
 
+;; show whitespace + control chars?
+(global-whitespace-mode 1)
+
 ;; perhaps I should remove these, add them to the config instead
 ;; TODO: cleanup
 (custom-set-variables
