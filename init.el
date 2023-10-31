@@ -32,7 +32,7 @@
 (use-package doom-themes :ensure t)
 (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
       doom-themes-enable-italic t) ; if nil, italics is universally disabled
-(load-theme 'doom-gruvbox t)
+(load-theme 'doom-material-dark t)
 
 ;; indent
 (setq-default indent-tabs-mode nil) ; spaces
@@ -67,10 +67,10 @@
 (setq completion-cycle-threshold t)
 
 ;; using helm now...
-;; (require 'ido)
-;; (setq ido-enable-flex-matching t)
-;; (setq ido-everywhere t)
-;; (ido-mode t)
+(require 'ido)
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode t)
 
 (use-package flycheck :ensure t)
 (global-flycheck-mode)
@@ -80,18 +80,22 @@
 (global-company-mode)
 (global-hl-line-mode)
 
-(helm-mode 1)
+;; (helm-mode 1)
 (global-set-key (kbd "M-x") #'helm-M-x)
-(global-set-key (kbd "C-x C-f") #'helm-find-files)
+;; (global-set-key (kbd "C-x C-f") #'helm-find-files)
 
 (use-package lsp-mode
   :ensure t
   :init
+  ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
+  (setq lsp-keymap-prefix "C-c l")
   :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
          ((c++-mode) . lsp)
          ;; if you want which-key integration
          (lsp-mode . lsp-enable-which-key-integration))
   :commands lsp)
+(with-eval-after-load 'lsp-mode
+  (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration))
 (use-package lsp-ui :ensure t :commands lsp-ui-mode)
 ;;(use-package flycheck-google-cpplint :ensure t)
 (use-package company-c-headers :ensure t)
