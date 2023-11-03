@@ -20,8 +20,8 @@
 (tool-bar-mode -1)
 (global-display-line-numbers-mode 1)
 (global-visual-line-mode t)
-(use-package doom-modeline :ensure t)
-(doom-modeline-mode 1)
+;; (use-package doom-modeline :ensure t)
+;; (doom-modeline-mode 1)
 (column-number-mode 1)                            ; Show the column number
 (fset 'yes-or-no-p 'y-or-n-p)                     ; Replace yes/no prompts with y/n
 (set-default-coding-systems 'utf-8)               ; Default to utf-8 encoding
@@ -67,10 +67,10 @@
 (setq completion-cycle-threshold t)
 
 ;; using helm now...
-(require 'ido)
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
-(ido-mode t)
+;; (require 'ido)
+;; (setq ido-enable-flex-matching t)
+;; (setq ido-everywhere t)
+;; (ido-mode t)
 
 (use-package flycheck :ensure t)
 (global-flycheck-mode)
@@ -82,7 +82,7 @@
 
 ;; (helm-mode 1)
 (global-set-key (kbd "M-x") #'helm-M-x)
-;; (global-set-key (kbd "C-x C-f") #'helm-find-files)
+(global-set-key (kbd "C-x C-f") #'helm-find-files)
 
 (use-package lsp-mode
   :ensure t
