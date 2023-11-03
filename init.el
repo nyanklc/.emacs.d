@@ -127,8 +127,8 @@
 (setq make-backup-files nil)
 
 ;; show whitespace + control chars?
-(global-whitespace-mode 1)
-(setq whitespace-line-column 250)
+;; (global-whitespace-mode 1)
+;; (setq whitespace-line-column 250)
 
 ;; perhaps I should remove these, add them to the config instead
 ;; TODO: cleanup
