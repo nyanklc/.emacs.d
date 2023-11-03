@@ -130,6 +130,10 @@
 ;; (global-whitespace-mode 1)
 ;; (setq whitespace-line-column 250)
 
+;; multiterm
+(use-package multi-term :ensure t)
+(setq multi-term-program "/bin/bash")
+
 ;; perhaps I should remove these, add them to the config instead
 ;; TODO: cleanup
 (custom-set-variables
