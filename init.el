@@ -36,7 +36,7 @@
 
 ;; indent
 (setq-default indent-tabs-mode nil) ; spaces
-(setq-default tab-width 2)
+(setq-default tab-width 4)
 (setq indent-line-function 'insert-tab)
 
 ;; parantheses/brackets
