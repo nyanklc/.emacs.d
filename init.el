@@ -36,11 +36,25 @@
 
 ;; indent
 (setq-default indent-tabs-mode nil) ; spaces
-(setq-default tab-width 4)
+(setq-default tab-width 2)
 (setq indent-line-function 'insert-tab)
 
 ;; parantheses/brackets
 (electric-pair-mode t)
+
+;; backspace no copy
+(defun backward-delete-word (arg)
+  "Delete characters backward until encountering the beginning of a word.
+With argument ARG, do this that many times."
+ (interactive "p")
+  (delete-region (point) (progn (backward-word arg) (point))))
+(global-set-key (kbd "C-<backspace>") 'backward-delete-word) 
+
+;;; use command key for meta in mac
+(setq mac-option-key-is-meta nil
+      mac-command-key-is-meta t
+      mac-command-modifier 'meta
+      mac-option-modifier 'none)
 
 ;; display key-bindings
 (use-package which-key
@@ -108,6 +122,7 @@
 (use-package which-key
     :config
     (which-key-mode))
+(use-package lsp-jedi :ensure t)
 
 ;; TODO:
 ;; lsp mode hooks
@@ -147,7 +162,7 @@
  '(mouse-wheel-progressive-speed nil)
  '(mouse-wheel-scroll-amount '(3 ((shift) . hscroll) ((meta)) ((control) . text-scale)))
  '(package-selected-packages
-   '(helm-R lsp-ivy helm-lsp company-c-headers flycheck-clang-tidy lsp-ui magit company electric-pair doom-themes neotree doom-modeline sudo-edit emojify dashboard all-the-icons gcmh lsp-mode aggressive-indent focus rainbow-delimiters gruvbox-theme auto-package-update use-package yasnippet-snippets yaml-mode windresize which-key wgrep web-mode visual-regexp untitled-new-buffer unfill undo-fu smooth-scroll smex rotate poly-org poly-noweb poly-markdown poetry pdf-tools outline-magic multiple-cursors multi-term minions ivy-hydra htmlize howdoi flycheck flx-ido exec-path-from-shell eval-in-repl epc dumb-jump diff-hl counsel conda company-math company-auctex command-log-mode better-defaults anzu adaptive-wrap))
+   '(lsp-jedi helm-R lsp-ivy helm-lsp company-c-headers flycheck-clang-tidy lsp-ui magit company electric-pair doom-themes neotree doom-modeline sudo-edit emojify dashboard all-the-icons gcmh lsp-mode aggressive-indent focus rainbow-delimiters gruvbox-theme auto-package-update use-package yasnippet-snippets yaml-mode windresize which-key wgrep web-mode visual-regexp untitled-new-buffer unfill undo-fu smooth-scroll smex rotate poly-org poly-noweb poly-markdown poetry pdf-tools outline-magic multiple-cursors multi-term minions ivy-hydra htmlize howdoi flycheck flx-ido exec-path-from-shell eval-in-repl epc dumb-jump diff-hl counsel conda company-math company-auctex command-log-mode better-defaults anzu adaptive-wrap))
  '(warning-suppress-types '((use-package) (comp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
