@@ -32,7 +32,7 @@
 (use-package doom-themes :ensure t)
 (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
       doom-themes-enable-italic t) ; if nil, italics is universally disabled
-(load-theme 'doom-material-dark t)
+(load-theme 'doom-ir-black t)
 
 ;; indent
 (setq-default indent-tabs-mode nil) ; spaces
