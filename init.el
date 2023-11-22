@@ -81,10 +81,12 @@ With argument ARG, do this that many times."
 (setq completion-cycle-threshold t)
 
 ;; using helm now...
-(require 'ido)
-(setq ido-enable-flex-matching 0)
-(setq ido-everywhere t)
-(ido-mode t)
+;; (require 'ido)
+;; (setq ido-enable-flex-matching 0)
+;; (setq ido-everywhere t)
+;; (ido-mode t)
+
+(icomplete-mode t)
 
 (use-package flycheck :ensure t)
 (global-flycheck-mode)
