@@ -76,6 +76,7 @@ With argument ARG, do this that many times."
 
 ;; cursor
 (setq-default cursor-type 'box)
+(blink-cursor-mode 0)
 
 ;; tab completion
 (setq completion-cycle-threshold t)
