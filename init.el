@@ -80,7 +80,7 @@ With argument ARG, do this that many times."
 
 (use-package company :ensure t)
 (global-company-mode)
-(global-hl-line-mode)
+;;(global-hl-line-mode)
 
 (use-package lsp-mode
   :ensure t
