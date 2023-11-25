@@ -19,7 +19,6 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (global-display-line-numbers-mode 1)
-(global-visual-line-mode t)
 ;; (use-package doom-modeline :ensure t)
 ;; (doom-modeline-mode 1)
 (column-number-mode 1)                            ; Show the column number
@@ -27,12 +26,6 @@
 (set-default-coding-systems 'utf-8)               ; Default to utf-8 encoding
 (show-paren-mode 1)
 (windmove-default-keybindings)
-
-;; theme
-(use-package doom-themes :ensure t)
-(setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
-      doom-themes-enable-italic t) ; if nil, italics is universally disabled
-(load-theme 'doom-monokai-pro t)
 
 ;; indent
 (setq-default indent-tabs-mode nil) ; spaces
@@ -81,14 +74,6 @@ With argument ARG, do this that many times."
 ;; tab completion
 (setq completion-cycle-threshold t)
 
-;; using helm now...
-;; (require 'ido)
-;; (setq ido-enable-flex-matching 0)
-;; (setq ido-everywhere t)
-;; (ido-mode t)
-
-(icomplete-mode t)
-
 (use-package flycheck :ensure t)
 (global-flycheck-mode)
 (setq-default flycheck-disabled-checker '(emacs-lisp-checkdoc))
@@ -96,10 +81,6 @@ With argument ARG, do this that many times."
 (use-package company :ensure t)
 (global-company-mode)
 (global-hl-line-mode)
-
-;; (helm-mode 1)
-;;(global-set-key (kbd "M-x") #'helm-M-x)
-;;(global-set-key (kbd "C-x C-f") #'helm-find-files)
 
 (use-package lsp-mode
   :ensure t
@@ -143,10 +124,6 @@ With argument ARG, do this that many times."
 
 ;; no backup files
 (setq make-backup-files nil)
-
-;; show whitespace + control chars?
-;; (global-whitespace-mode 1)
-;; (setq whitespace-line-column 250)
 
 ;; multiterm
 (use-package multi-term :ensure t)
