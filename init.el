@@ -71,6 +71,9 @@ With argument ARG, do this that many times."
 (setq-default cursor-type 'box)
 (blink-cursor-mode 0)
 
+;; theme
+(load-theme 'doom-molokai)
+
 ;; tab completion
 (setq completion-cycle-threshold t)
 
